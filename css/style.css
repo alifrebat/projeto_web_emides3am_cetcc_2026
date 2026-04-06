@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#geral  {
+    width: 500px;
+    min-height: 650px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #d8d2d2;    
+}
+
+h1{
+    text-align: center;
+    padding: 20px 0px;
+}
+
+#div-form{
+    padding: 5px 20px; 
+    margin: 20px 0px;
+}
+
+label, button{
+    display: block;
+    margin: 10px 0px;
+}
+
+
+
