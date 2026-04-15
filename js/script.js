@@ -80,3 +80,30 @@ const renderizarProdutos = () => {
         containerVitrine.appendChild(cardProduto)
     })
 }
+
+const adicionarProduto = (evento) => {
+    evento.preventDefault()
+
+    const form = document.getElementById('form-produto')
+    const inputNome = document.getElementById('nome')
+    const inputCarac = document.getElementById('caracteristicas')
+    const inputValor = document.getElementById('valor')
+    const inputUnidade = document.getElementById('unidade')
+    const inputTipo = document.getElementById('tipo')
+
+    const novoProduto = {
+        id: Date.now(),
+        nome: inputNome.value,
+        caracteristicas: inputCarac.value,
+        valorUnitario: Number(inputValor.value),
+        unidade: inputUnidade.value,
+        tipo: Number(inputTipo.value),
+    }
+
+    produtosCadastrados = [...produtosCadastrados, novoProduto]
+    renderizarProdutos()
+
+    form.reset()
+
+    inputNome.focus()
+}
