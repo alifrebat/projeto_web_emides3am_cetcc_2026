@@ -17,3 +17,10 @@ const calcularImposto = (tipoProduto) => {
             return 0
     }
 }
+
+const removerProduto = (idProduto) => {
+    produtosCadastrados = produtosCadastrados.filter(
+        (produto) => produto.id !== idProduto,
+    )
+    renderizarProdutos()
+}
