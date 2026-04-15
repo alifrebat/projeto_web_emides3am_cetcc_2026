@@ -107,3 +107,6 @@ const adicionarProduto = (evento) => {
 
     inputNome.focus()
 }
+
+const formProduto = document.getElementById('form-produto')
+formProduto.addEventListener('submit', adicionarProduto)
