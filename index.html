@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <!-- HEADER -->
     <header>
         <nav class="nav">
             <div class="nav-logo">
@@ -30,7 +29,6 @@
         </nav>
     </header>
 
-    <!-- MAIN / HERO -->
     <main>
         <section class="hero">
             <div class="hero-info">
@@ -45,7 +43,6 @@
         </section>
     </main>
 
-    <!-- CATEGORIAS -->
     <section class="categorias">
         <div class="card" id="cadastro">
             <div class="card-img">
@@ -75,13 +72,12 @@
             </div>
         </div>
     </section>
-    <!-- FORM + RESULTADO -->
+
     <section class="inserir-dados-container">
-        <!-- FORM -->
         <div class="inserir-info-container ativo">
             <div class="inserir-dados">
                 <h2>Preencha os Dados</h2>
-                <form>
+                <form id="form-produto">
                     <label for="produto">Nome do Produto</label>
                     <input type="text" id="produto" name="produto" required>
                     <label for="descricao">Descrição do Produto</label>
@@ -100,8 +96,8 @@
                             <option value="5">Tipo 5 - 17%</option>
                         </select>
                     </div>
+                    <button type="submit" class="btn-form">Adicionar Produto</button>
                 </form>
-                <button type="submit" class="btn-form">Adicionar Produto</button>
             </div>
             <div class="exibir-resultados">
                 <h2>Resultado da Simulação</h2>
@@ -119,31 +115,11 @@
                 </div>
             </div>
         </div>
-        <!-- LISTA -->
-        <div class="exibir-produtos ">
-            <div class="produto-simulado">
-                <h2>Produto Cadastrado</h2>
-                <p>Valor Total: R$ <span>0,00</span></p>
-                <p>Valor do Produto: R$ <span>0,00</span></p>
-                <p>Valor do Imposto: R$ <span>0,00</span></p>
-                <p>Quantidade: <span>0</span></p>
-                <p>Tipo: <span>0</span></p>
-                <button class="btn-rmv">Remover</button>
+        
+        <div class="exibir-produtos">
             </div>
-
-            <div class="produto-simulado">
-                <h2>Produto Cadastrado</h2>
-                <p>Valor Total: R$ <span>0,00</span></p>
-                <p>Valor do Produto: R$ <span>0,00</span></p>
-                <p>Valor do Imposto: R$ <span>0,00</span></p>
-                <p>Quantidade: <span>0</span></p>
-                <p>Tipo: <span>0</span></p>
-                <button class="btn-rmv">Remover</button>
-            </div>
-        </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-links">
             <div>
@@ -171,41 +147,42 @@
             </div>
         </div>
         <div class="footer-bottom-container">
-        <div class="footer-bottom">
-            <div class="footer-brand">
-                <img src="img/bandeira-do-brasil-og.webp" alt="Bandeira do Brasil">
-                <div>
-                    <span>Governo Federal</span>
-                    <p>Simulador de Impostos</p>
+            <div class="footer-bottom">
+                <div class="footer-brand">
+                    <img src="img/bandeira-do-brasil-og.webp" alt="Bandeira do Brasil">
+                    <div>
+                        <span>Governo Federal</span>
+                        <p>Simulador de Impostos</p>
+                    </div>
                 </div>
+                <p>© Governo Federal. Todos os direitos reservados.</p>
             </div>
-            <p>© Governo Federal. Todos os direitos reservados.</p>
-        </div>
         </div>
     </footer>
 
     <script>
-       const cards = document.querySelectorAll('.card')
-       console.log(cards)
-       const cadastro = document.querySelector('.inserir-info-container')
-       const exibicao = document.querySelector('.exibir-produtos')
+        const cards = document.querySelectorAll('.card')
+        console.log(cards)
+        const cadastro = document.querySelector('.inserir-info-container')
+        const exibicao = document.querySelector('.exibir-produtos')
 
-       cards.forEach(item => {
-        item.addEventListener('click', ()=> {
-            const itemId = item.id
-            console.log(itemId)
-            if(itemId === 'cadastro'){
-                cadastro.classList.add('ativo')
-                exibicao.classList.remove('ativo')
-            }
-            else if(itemId === 'exibicao'){
-                exibicao.classList.add('ativo')
-                cadastro.classList.remove('ativo')
-            }
+        cards.forEach(item => {
+            item.addEventListener('click', () => {
+                const itemId = item.id
+                console.log(itemId)
+                if (itemId === 'cadastro') {
+                    cadastro.classList.add('ativo')
+                    exibicao.classList.remove('ativo')
+                }
+                else if (itemId === 'exibicao') {
+                    exibicao.classList.add('ativo')
+                    cadastro.classList.remove('ativo')
+                }
+            })
         })
-       })
     </script>
-
+    
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
